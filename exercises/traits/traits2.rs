@@ -14,7 +14,10 @@ trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
-// TODO: Implement trait `AppendBar` for a vector of strings.
+impl AppendBar for Vec<String> {
+    fn append_bar(self) -> Self {
+    }
+}
 
 #[cfg(test)]
 mod tests {

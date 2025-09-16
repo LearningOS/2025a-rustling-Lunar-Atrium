@@ -10,8 +10,6 @@
 // Obtain the number of bytes (not characters) in the given argument.
 // TODO: Add the AsRef trait appropriately as a trait bound.
 
-use std::ops::Mul;
-
 fn byte_counter<T: AsRef<str>>(arg: T) -> usize {
     arg.as_ref().as_bytes().len()
 }
@@ -25,7 +23,7 @@ fn char_counter<T: AsRef<str>>(arg: T) -> usize {
 // Squares a number using as_mut().
 // TODO: Add the appropriate trait bound.
 fn num_sq<T>(arg: &mut T)
-where T: AsMut<u32> + Copy {
+where T: AsMut<u32> {
     let m = arg.as_mut();
     let v = *m;
     *m = v * v;
